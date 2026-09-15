@@ -339,6 +339,11 @@ let browser;
     const match = url.pathname.match(/\/assets\/icons\/(\d+)\.png$/);
     if (match && catalog[Number(match[1])]?.icon === false) pendingIconRequests.push(request.url());
   });
+  await page.route('**/*', route => {
+    const url = route.request().url();
+    if (/^https?:/.test(url) && new URL(url).origin !== base) return route.abort();
+    return route.continue();
+  });
   await page.route('**/assets/icons/31.png', route => route.abort());
   await page.goto(`${base}/index.html`);
   // Exercise expanded cards below; fresh/default-collapsed behavior has its own tests.
@@ -604,7 +609,10 @@ let browser;
   await assertAdLayout(browser, base, root, totalTools);
   await assertPinnedTools(browser, base, root, catalog, categoryNames);
   assert.deepEqual(errors, [], 'No uncaught JavaScript errors');
-  assert.deepEqual(externalRequests, [], 'No external runtime requests');
+  const allowedAdSenseHosts = new Set(['pagead2.googlesyndication.com', 'googleads.g.doubleclick.net', 'ep1.adtrafficquality.google', 'ep2.adtrafficquality.google']);
+  const unexpectedExternalRequests = externalRequests.filter(url => !allowedAdSenseHosts.has(new URL(url).hostname));
+  assert.equal(externalRequests.some(url => new URL(url).hostname === 'pagead2.googlesyndication.com'), true, 'AdSense verification script is requested');
+  assert.deepEqual(unexpectedExternalRequests, [], 'No unexpected external runtime requests');
   assert.deepEqual(pendingIconRequests, [], 'Text-only resources never request missing PNGs');
   console.log('PASS publishers: MDPI/Thieme/Taylor & Francis, stable indexes 73–75, bilingual aliases, journal filtering excludes resolver, text-only identities, no missing-icon requests and HTTP/local files');
   console.log('PASS formal homepage: local files, missing icons, restricted storage and no JS errors');

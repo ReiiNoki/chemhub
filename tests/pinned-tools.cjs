@@ -12,6 +12,8 @@ module.exports = async function assertPinnedTools(browser, base, root, catalog, 
   function localOnly(route) {
     const url = route.request().url();
     if (/^https?:/.test(url) && new URL(url).origin !== new URL(base).origin) {
+      const host = new URL(url).hostname;
+      if (host === 'pagead2.googlesyndication.com') return route.abort();
       remoteRequests.push(url);
       return route.abort();
     }
@@ -273,6 +275,6 @@ module.exports = async function assertPinnedTools(browser, base, root, catalog, 
     assert.deepEqual(popups, [], 'Pin controls never open new windows');
     assert.deepEqual(remoteRequests, [], 'Pinning has no remote dependencies or navigation side effects');
     assert.deepEqual(errors, [], 'Personal pinning handles storage and image failures without uncaught errors');
-    console.log('PASS personal pins: top shortcuts, stable identities/order, click/keyboard/touch, valid sibling controls, focus, folding/search isolation, reload/cross-tab/file persistence, invalid/denied/quota storage, compact icons, both views/responsive hit targets, no external requests');
+    console.log('PASS personal pins: top shortcuts, stable identities/order, click/keyboard/touch, valid sibling controls, focus, folding/search isolation, reload/cross-tab/file persistence, invalid/denied/quota storage, compact icons, both views/responsive hit targets, no unexpected external requests');
   } finally { await context.close(); }
 };

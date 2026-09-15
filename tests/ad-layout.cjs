@@ -9,12 +9,17 @@ module.exports = async function assertAdLayout(browser, base, root, totalTools) 
     const page = await context.newPage();
     page.on('pageerror', error => errors.push(error.message));
     page.on('request', request => requests.push(request.url()));
+    await page.route('**/*', route => {
+      const url = route.request().url();
+      if (/^https?:/.test(url) && new URL(url).origin !== new URL(base).origin) return route.abort();
+      return route.continue();
+    });
     await page.goto(`${base}/index.html`);
     assert.equal(await page.locator('.ad-rail').count(), 2);
     assert.equal(await page.locator('#ad-slot-left').count(), 1);
     assert.equal(await page.locator('#ad-slot-right').count(), 1);
     assert.deepEqual(await page.locator('.ad-label').allTextContents(), ['广告', '广告']);
-    assert.equal(await page.locator('.ad-slot a, .ad-slot button, .ad-slot iframe, ins.adsbygoogle').count(), 0, 'Reservations are not live or clickable ads');
+    assert.equal(await page.locator('.ad-slot a, .ad-slot button, .ad-slot iframe, .ad-slot ins.adsbygoogle').count(), 0, 'Reservations are not live or clickable ads');
     assert.equal(await page.locator('.tool-card').count(), totalTools);
     assert.equal(await page.locator('.tool-card:visible').count(), 0, 'Default category folding is unchanged');
     await page.locator('.group-toggle').first().click();
@@ -85,9 +90,12 @@ module.exports = async function assertAdLayout(browser, base, root, totalTools) 
     assert.equal(await page.locator('.ad-rail:visible').count(), 0, 'Local-file mobile layout hides both slots');
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
     const remoteRequests = requests.filter(url => /^https?:/.test(url) && new URL(url).origin !== new URL(base).origin);
-    assert.deepEqual(remoteRequests, [], 'No AdSense or other third-party requests are made by placeholders');
+    const allowedAdSenseHosts = new Set(['pagead2.googlesyndication.com', 'googleads.g.doubleclick.net', 'ep1.adtrafficquality.google', 'ep2.adtrafficquality.google']);
+    const allowedAdSense = remoteRequests.filter(url => allowedAdSenseHosts.has(new URL(url).hostname));
+    assert.equal(allowedAdSense.some(url => new URL(url).hostname === 'pagead2.googlesyndication.com'), true, 'AdSense verification script is requested');
+    assert.deepEqual(remoteRequests.filter(url => !allowedAdSenseHosts.has(new URL(url).hostname)), [], 'No unexpected third-party requests are made');
     assert.deepEqual(errors, [], 'No JavaScript errors from the reserved ad layout');
-    console.log('PASS ad reservations: two static 160x600 slots, >=1440px only, 24px gaps, both views across 14 widths, stable center layout, search, local files, no external ad requests');
+    console.log('PASS ad reservations: two static 160x600 slots, >=1440px only, 24px gaps, both views across 14 widths, stable center layout, search, local files, AdSense verification script allowed');
   } finally {
     await context.close();
   }
