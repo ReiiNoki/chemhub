@@ -67,9 +67,3 @@ node tests/designs.cjs
 ```
 
 构建测试使用临时目录，不改动网站源码或本地 `dist/`。浏览器测试只覆盖正式首页，不生成截图。详细交互、广告预留和测试说明见 [`docs/MAINTENANCE.md`](docs/MAINTENANCE.md)。
-
-## 广告与外部资源
-
-首页仅在视口宽度 ≥1440px 时预留左右两个 160×600px 广告位，小屏隐藏；目前没有 AdSense 脚本或实际广告请求。正式接入前仍需完成账号／网站审核，核对版权与隐私要求，并使用实际发布商和广告单元代码。本项目未创建 `ads.txt` 或填入任何发布商 ID。
-
-外部网站的内容与服务由各自提供方负责；网站和机构图标的权利归各自所有。图标来源见 `assets/icons/README.md` 和 `assets/icons/sources.json`。
