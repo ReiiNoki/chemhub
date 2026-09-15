@@ -66,4 +66,4 @@ node tests/build.cjs
 node tests/designs.cjs
 ```
 
-构建测试使用临时目录，不改动网站源码或本地 `dist/`。浏览器测试只覆盖正式首页，不生成截图。详细交互、广告预留和测试说明见 [`docs/MAINTENANCE.md`](docs/MAINTENANCE.md)。
+构建测试使用临时目录，不改动网站源码或本地 `dist/`。浏览器测试只覆盖正式首页，不生成截图。详细交互、宽屏留白和测试说明见 [`docs/MAINTENANCE.md`](docs/MAINTENANCE.md)。
