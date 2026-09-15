@@ -1,0 +1,3 @@
+# Keep text portable between Windows development and Cloudflare builds.
+* text=auto eol=lf
+*.png binary

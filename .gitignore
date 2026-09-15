@@ -1,0 +1,46 @@
+# Dependencies, generated deployment output and local Cloudflare state
+node_modules/
+/dist/
+/build/
+.wrangler/
+.cache/
+
+# Secrets (only sanitized example files may be tracked)
+.env
+.env.*
+!.env.example
+!.env.sample
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+*.pem
+*.key
+
+# Local editor / agent state and OS files
+.vscode/
+.idea/
+.pi/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs, temporary files, test output and release archives
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+__pycache__/
+*.py[cod]
+/coverage/
+/playwright-report/
+/test-results/
+/*.zip
+
+# Third-party reference captures
+/docs/references/*
+!/docs/references/research-groups.json
+!/docs/references/community-resources.json
+
+# Keep application/test source, documentation and icon provenance.
+# scripts/build.cjs separately selects the files that may be published to dist/.

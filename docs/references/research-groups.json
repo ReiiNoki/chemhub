@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "checkedAt": "2026-09-10T08:44:59.332160+00:00",
+  "scope": "仅收录前面讨论过且核到独立课题组网站的入口；补充横岛组主页及福山–横岛机理题库。此前14个工具候选未在本轮加入。",
+  "verificationLimits": "HTTP 200及主页身份核对只代表本次访问结果，不保证未来在线、持续更新、开放招生或允许旁听。未关闭TLS验证；没有上传科研文件或批量转载题目、论文。",
+  "groups": [
+    {"index":45,"name":"MacMillan Group","url":"https://macmillan.princeton.edu/","type":"group-homepage","httpStatus":200,"method":"HTTPS request","title":"Home - Macmillan Group"},
+    {"index":46,"name":"Baran Lab","url":"https://baranlab.org/","type":"group-homepage","httpStatus":200,"method":"HTTPS request","title":"Baran Lab | Total Synthesis Organic Chemistry Research"},
+    {"index":47,"name":"Hartwig Group","url":"https://hartwig.cchem.berkeley.edu/","type":"group-homepage","httpStatus":200,"method":"HTTPS request","title":"Home | The Hartwig Group"},
+    {"index":48,"name":"Houk Group","url":"https://www.chem.ucla.edu/houk/","type":"group-homepage","httpStatus":200,"method":"HTTPS request","title":"Houk Research Group :: Houk"},
+    {"index":49,"name":"Yaghi Group","url":"https://yaghi.berkeley.edu/","type":"group-homepage","httpStatus":200,"method":"HTTPS request","title":"Omar Yaghi's Laboratory | Department of Chemistry at the University of California, Berkeley"},
+    {"index":50,"name":"Arnold Group","url":"http://fhalab.caltech.edu/","type":"group-homepage","httpStatus":200,"method":"HTTP request","title":"Arnold Research Group"},
+    {"index":51,"name":"游书力课题组","url":"http://shuliyou.sioc.ac.cn/","type":"group-homepage","httpStatus":200,"method":"HTTP request","title":"The You Group --- Shanghai Institute of Organic Chemistry"},
+    {"index":52,"name":"冯小明课题组 · ASL","url":"https://www.scu.edu.cn/chem_asl/","type":"group-homepage","httpStatus":200,"method":"HTTPS request","title":"The ASL Lab"},
+    {"index":53,"name":"杨震课题组","url":"https://www.chem.pku.edu.cn/zyang/","type":"group-homepage","httpStatus":200,"method":"Chrome with default TLS validation","title":"The Yang Group","note":"Python请求遇到本机证书链错误，Chrome默认验证下正常访问；首页新闻多为早期内容，不将旧招聘公告当成当前招生信息。"},
+    {"index":54,"name":"雷晓光课题组","url":"https://www.chem.pku.edu.cn/leigroup/","type":"group-homepage","httpStatus":200,"method":"Chrome with default TLS validation","title":"THE LEI GROUP | Chemical Biology, Organic Synthesis, Medicinal Chemistry"},
+    {"index":55,"name":"唐勇课题组","url":"https://tangyong.sioc.ac.cn/","type":"group-homepage","httpStatus":200,"method":"HTTPS request","title":"唐勇课题组"},
+    {"index":56,"name":"龚流柱课题组","url":"http://staff.ustc.edu.cn/~gonglz/","type":"group-homepage","httpStatus":200,"method":"HTTP request","title":"The Gong Group @USTC - 龚流柱课题组"},
+    {"index":57,"name":"裴坚–王婕妤课题组","url":"https://www.chem.pku.edu.cn/pei/zwsy/index.htm","type":"group-homepage","httpStatus":200,"method":"Chrome with default TLS validation","title":"Pei Research Group--Home"},
+    {"index":58,"name":"井上将行 Inoue","url":"https://inoue.f.u-tokyo.ac.jp/e_index.html","type":"group-homepage","httpStatus":200,"method":"HTTPS request","title":"INOUE RESEARCH GROUP"},
+    {"index":59,"name":"伊丹健一郎 Itami","url":"https://itami-lab.com/?lang=en","type":"group-homepage","httpStatus":200,"method":"HTTPS request","title":"Itami Molecule Creation Laboratory, RIKEN","note":"按目前官网以RIKEN为主要标识；不否认其名古屋大学等其他研究基地。"},
+    {"index":60,"name":"伊藤肇 Ito","url":"https://itogrouphp.eng.hokudai.ac.jp/en.html","type":"group-homepage","httpStatus":200,"method":"HTTPS request","title":"English Top Page | HOKKAIDO UNIVERSITY ITO RESEARCH LAB"},
+    {"index":61,"name":"前田理 Maeda · 理论化学","url":"https://afir.sci.hokudai.ac.jp/theochem/en/","type":"group-homepage","httpStatus":200,"method":"HTTPS request","title":"English Site Home | Department of Chemistry, Faculty of Chemistry,Hokkaido University Theoretical Chemistry Lab Web Site","affiliationSource":"https://www.icredd.hokudai.ac.jp/maeda-satoshi"},
+    {"index":62,"name":"山口茂弘 Yamaguchi","url":"http://orgreact.chem.nagoya-u.ac.jp/en/index.html","type":"group-homepage","httpStatus":200,"method":"HTTP request","title":"Yamaguchi Group | Functional Organic Materials Laboratory, Nagoya University","affiliationSource":"https://www.itbm.nagoya-u.ac.jp/en/members/post_102/index.php"},
+    {"index":63,"name":"横岛聪 Yokoshima","url":"https://www.ps.nagoya-u.ac.jp/lab_pages/natural_products/","type":"group-homepage","httpStatus":200,"method":"HTTPS request","title":"名古屋大学大学院創薬科学研究科 天然物化学分野"}
+  ],
+  "learningResources": [
+    {
+      "index":64,
+      "name":"福山–横岛机理习题",
+      "url":"https://www.ps.nagoya-u.ac.jp/lab_pages/natural_products/problem-e.html",
+      "type":"learning-archive-with-continuing-entries",
+      "category":"学习资源",
+      "httpStatus":200,
+      "japanesePage":"https://www.ps.nagoya-u.ac.jp/lab_pages/natural_products/problem.html",
+      "officialDescription":"グループミーティングで行っている反応機構の問題を、解答例とあわせて掲載します。",
+      "interpretation":"公开组会使用的反应机理题和解答例；有福山组历史题及横岛组后续题。按年月归档，不能据此确认现在仍每周举行讨论或每周公开更新。",
+      "latestLinkedMonthObserved":"2026-05",
+      "examples":[
+        {"url":"https://www.ps.nagoya-u.ac.jp/lab_pages/natural_products/problem/p2605.pdf","type":"problems","httpStatus":200,"contentType":"application/pdf","pdfSignatureVerified":true},
+        {"url":"https://www.ps.nagoya-u.ac.jp/lab_pages/natural_products/problem/a2605.pdf","type":"answer-examples","httpStatus":200,"contentType":"application/pdf","pdfSignatureVerified":true}
+      ]
+    }
+  ],
+  "excluded": [
+    {"name":"马大为","reason":"用户明确要求本轮不加入，不用院所个人介绍页替代课题组主页。"}
+  ],
+  "deferred": [
+    {"name":"金井求 Kanai","url":"https://gousei.f.u-tokyo.ac.jp/","reason":"Python证书链验证失败；Chrome正常TLS验证下返回net::ERR_CERT_AUTHORITY_INVALID，HTTP入口也转至同一HTTPS页面。未绕过证书警告，暂缓。"},
+    {"name":"施章杰","url":"https://shigroup.cn/","reason":"HTTPS请求返回SSL UNEXPECTED_EOF_WHILE_READING；另试https://www.shigroup.cn/亦失败，http://www.shigroup.cn/返回502。仅表明本次访问异常，不断言网站永久下线。"}
+  ],
+  "fukuyamaContext": {
+    "tokyoAppointment":"1995–2013，东京大学大学院药学系研究科教授",
+    "careerSource":"https://www.ps.nagoya-u.ac.jp/lab_pages/natural_products/member_fukuyama.html",
+    "careerSourceCaveat":"旧个人页履历止于2013起任特任教授，不能将2013–直接解释为现任。",
+    "retirementEventDate":"2018-03-07",
+    "retirementSource":"https://www.ps.nagoya-u.ac.jp/pickup/退職記念講演会/",
+    "retirementSourceTitle":"福山 透 特任教授 退職記念講演会",
+    "catalogDecision":"不新增名为福山透的现役东京大学课题组；分别收录横岛组主页和公开机理题库。"
+  },
+  "otherNotes": [
+    "Baran公开专题资料不等于其现场组会开放旁听；https://baranlab.org/seminars/明确说组会不再向公众开放。",
+    "北大三组采用浏览器默认TLS验证复核，未通过关闭安全校验绕过证书问题。",
+    "图标的直接来源、机构来源、缓存来源和SHA-256另见assets/icons/sources.json；本页不声称每个课题组有独立favicon。"
+  ]
+}

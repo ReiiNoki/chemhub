@@ -1,0 +1,451 @@
+{
+  "version": 1,
+  "checkedAt": "2026-09-14T02:33:56.296Z",
+  "repairedIcons": [
+    {
+      "file": "6.png",
+      "tool": "ChEBI",
+      "kind": "favicon",
+      "source": "https://www.ebi.ac.uk/chebi/chebi_icon_only_rgb.png",
+      "note": "官网提供的 ChEBI 图标。",
+      "sha256": "d2f1448f9c122d3a5f7c2b82d6222f25af03cd9b73d7f0ec1ff05ed1df14cb6b"
+    },
+    {
+      "file": "7.png",
+      "tool": "ZINC",
+      "kind": "project-favicon",
+      "source": "https://raw.githubusercontent.com/docking-org/cartblanche22/master/public/favicon.ico",
+      "note": "ZINC 网站当前返回人机验证页；使用同一 docking-org 项目维护的 ZINC-22 官方仓库 favicon，并非抓取服务的占位图。",
+      "sha256": "84fd775e4fd11747d9f5afcf0c38ca52bb89f5316f3efd1d438f586f464afa67"
+    },
+    {
+      "file": "9.png",
+      "tool": "SciFinder",
+      "kind": "favicon",
+      "source": "https://sso.cas.org/assets/images/favicons/cas.ico",
+      "note": "SciFinder 官方登录页面声明的 CAS favicon。",
+      "sha256": "0e583cb3eb5f2aef303718821bcdb0306c91d0154ed8985d3ca574b8c832e2cd"
+    },
+    {
+      "file": "10.png",
+      "tool": "Organic Syntheses",
+      "kind": "site-logo",
+      "source": "https://www.orgsyn.org/Styles/oslogo.png",
+      "note": "官网未声明 favicon，使用其官网 logo 等比例制作导航小图标。",
+      "sha256": "e5868d5f3ff29bd3473cfa4907ba6c9b530ec077f95db6d95fa2f4e96a03a1be"
+    },
+    {
+      "file": "12.png",
+      "tool": "Common Organic Chemistry",
+      "kind": "site-logo",
+      "source": "https://commonorganicchemistry.com/_images/Logo_Images/COC%20Logo2.jpg",
+      "note": "官网 favicon.ico 返回 404，使用其官网 logo 等比例制作导航小图标。",
+      "sha256": "e5334b03189337141fe347e223b9ed0ca99a165350d67b4bd56518c87dd0e3be"
+    },
+    {
+      "file": "16.png",
+      "tool": "SDBS",
+      "kind": "provider-favicon",
+      "source": "https://www.aist.go.jp/images/apple-touch-icon.png",
+      "note": "SDBS 明确设置空 favicon（data:,）；使用其提供机构 AIST 官网图标。",
+      "sha256": "6e36ada9d9dc915da5538862b9d2358e53fa9bee9e50c358bddd3745c4953fa4"
+    }
+  ],
+  "addedIcons": [
+    {
+      "file": "31.png",
+      "tool": "ACS Publications",
+      "kind": "provider-favicon",
+      "source": "https://axial.acs.org/favicons/favicon-light.png?v=2026",
+      "declaredAt": "https://axial.acs.org/",
+      "note": "期刊主站对自动请求返回 403；采用 ACS Publications 官方博客 Axial 声明的新版 ACS 品牌 favicon，其 ACS Publications 快捷入口使用相同品牌图形。",
+      "sha256": "85e72b7b002b2a4a10158539ea5a56d05a8682109481e8dd4945fd50ff01b682"
+    },
+    {
+      "file": "32.png",
+      "tool": "RSC Publishing",
+      "kind": "provider-favicon",
+      "source": "https://www.rsc.org/img/favicons/favicon-32x32.png",
+      "note": "期刊主站对自动请求返回 403；采用英国皇家化学会官网提供的 RSC 图标。",
+      "sha256": "aabf6b1518ca78898f7296cdfdbfeded679518c6e321f1ebdf51d5314395a507"
+    },
+    {
+      "file": "33.png",
+      "tool": "ScienceDirect · Elsevier",
+      "kind": "provider-favicon",
+      "source": "https://www.elsevier.com/images/elsevier-favicon.png",
+      "declaredAt": "https://www.elsevier.com/",
+      "note": "ScienceDirect 的图标 CDN 对自动请求返回 403；采用其出版商 Elsevier 官网声明的 favicon，不是 ScienceDirect 原生 favicon。",
+      "sha256": "85e95c591b37e6da5f6e1e7a8b9fff257dd5188d6aa406ae7c99414625f750da"
+    },
+    {
+      "file": "34.png",
+      "tool": "Wiley Online Library",
+      "kind": "provider-favicon",
+      "source": "https://www.wiley.com/etc.clientlibs/web-strategy-build/clientlibs/clientlib-sites/resources/favicon-light.svg",
+      "declaredAt": "https://www.wiley.com/en-us/",
+      "note": "在线图书馆对自动请求返回 403；采用出版商 Wiley 官网声明的 SVG favicon，经浏览器真实渲染为 32×32 PNG。",
+      "sha256": "76875e5390973bf1b82bcca2c56353b16f4f1dacfa6e84b6af5a13eddcfb0ed3"
+    },
+    {
+      "file": "35.png",
+      "tool": "Springer Nature Link",
+      "kind": "favicon",
+      "source": "https://link.springer.com/oscar-static/img/favicons/darwin/favicon-de0c289efe.ico",
+      "declaredAt": "https://link.springer.com/",
+      "note": "期刊平台官网声明的 ICO favicon，提取原生 32×32 帧并转换为 PNG。",
+      "sha256": "7fe9bc560b6419ee17b133c2036c945ec63a6046e9744207a1f7eadb4583311f"
+    },
+    {
+      "file": "36.png",
+      "tool": "Nature",
+      "kind": "favicon",
+      "source": "https://www.nature.com/static/images/favicons/nature/favicon-32x32-3fe59ece92.png",
+      "declaredAt": "https://www.nature.com/",
+      "note": "Nature 官网声明的 32×32 PNG favicon。",
+      "sha256": "1b8bf8c4a80017e3d0cd3ccc21d5671e42e9005536004130cc88b6734e49e75f"
+    },
+    {
+      "file": "37.png",
+      "tool": "Science",
+      "kind": "cached-favicon",
+      "source": "https://www.google.com/s2/favicons?domain=www.science.org&sz=64",
+      "note": "Science 主站对自动请求返回 403；采用 Google favicon 缓存中的红底白色 S 图标并本地化，已目视确认不是通用占位图，并非直接从主站取得。页面运行时不请求 Google。",
+      "sha256": "7d6885b910b723db93057e3de6719a07101da4fa95e4140c29d9df76f30d19bc"
+    },
+    {
+      "file": "38.png",
+      "tool": "TCI Chemicals",
+      "kind": "cached-favicon",
+      "source": "https://www.google.com/s2/favicons?domain=www.tcichemicals.com&sz=64",
+      "note": "官网及 favicon 对自动请求返回 403；采用 Google 缓存中的 TCI 三六边形字标，已目视确认不是通用占位图。缓存内容实际为 34×34 JPEG，经解码转换为 32×32 PNG；页面运行时不请求 Google。",
+      "sha256": "53de97ef2f622e6c9f162871edd2992297fae61d5a71ccc116c7aba6adb3be27"
+    },
+    {
+      "file": "39.png",
+      "tool": "Thermo Fisher Scientific",
+      "kind": "cached-favicon",
+      "source": "https://www.google.com/s2/favicons?domain=www.thermofisher.com&sz=64",
+      "note": "官网及 favicon 对自动请求返回 403；采用 Google 缓存中的红色 T 字标，已目视确认不是通用占位图。缓存原图为 16×16 PNG，统一输出为 32×32 PNG，页面仍以 16px 显示；页面运行时不请求 Google。",
+      "sha256": "f33e83ee629926d3953d26ef4aa7ebefc13ec403013ba147249bb5bea86733ed"
+    },
+    {
+      "file": "40.png",
+      "tool": "富士和光 Wako",
+      "kind": "favicon",
+      "source": "https://labchem-wako.fujifilm.com/asia/img/favicon/favicon.ico",
+      "declaredAt": "https://labchem-wako.fujifilm.com/asia/index.html",
+      "note": "试剂官网声明的 FUJIFILM favicon。原图为 16×16 ICO，以最近邻放大至 32×32 并真实转换为 PNG；页面仍以 16px 显示。",
+      "sha256": "de6b0f003f3d0c19a967bdf2eaad047e1a5715c5c82295b15ba9f519203a4ac5"
+    },
+    {
+      "file": "41.png",
+      "tool": "关东化学 Kanto",
+      "kind": "favicon",
+      "source": "https://www.kanto.co.jp/dcms_media/image/favicon.ico",
+      "declaredAt": "https://www.kanto.co.jp/english/",
+      "note": "官网声明的 ICO favicon，提取原生 32×32 帧并转换为 PNG。",
+      "sha256": "c43b2cf8c00d6509c943a97bc76e32dfce435e773733034b21cbf7f8a1696fe2"
+    },
+    {
+      "file": "42.png",
+      "tool": "Strem",
+      "kind": "favicon",
+      "source": "https://www.strem.com/sfsites/c/cms/delivery/media/MC6TRZUGANW5FELOYEQHXKAFHXF4?width=32&height=32",
+      "declaredAt": "https://www.strem.com/",
+      "note": "官网声明的 Strem Catalog favicon。响应实际为 32×32 JPEG，经解码真实转换为 PNG。",
+      "sha256": "8165a6e0b200a2a00421cf2aef3cb10dd8300d37b5b437087729867362c4bc34"
+    },
+    {
+      "file": "43.png",
+      "tool": "Fluorochem",
+      "kind": "favicon",
+      "source": "https://fluorochem.co.uk/favicon.ico",
+      "note": "首页对自动请求返回 403，但官网 favicon.ico 可访问。提取原生 32×32 帧并转换为 PNG，已目视确认橙底白色 f 图标。",
+      "sha256": "e6767cf331e4f55a451c090d25f0b15f7d665fccf2772ba594a10cfb62374391"
+    },
+    {
+      "file": "44.png",
+      "tool": "Cambridge Isotope Laboratories",
+      "kind": "cached-favicon",
+      "source": "https://www.google.com/s2/favicons?domain=isotope.com&sz=64",
+      "note": "CIL 的静态页面未声明品牌 favicon，favicon.ico 返回应用 HTML，浏览器访问返回 403。采用 Google 缓存中的 CIL 品牌图标（108×54 PNG），等比例缩至 32×16 并补为 32×32 透明画布；已目视核对，运行时不请求 Google。",
+      "sha256": "062a7593868482361d45c048db6781b12fd0d2b7456655770a6636d497f38760"
+    },
+    {
+      "file": "45.png",
+      "tool": "MacMillan Group",
+      "kind": "favicon",
+      "source": "https://macmillan.princeton.edu/wp-content/uploads/cropped-arrowcircle_icon-1-32x32.png",
+      "declaredAt": "https://macmillan.princeton.edu/",
+      "note": "官网声明的 PNG 图标，真实解码为 32×32 PNG，页面仍以 16px 显示。",
+      "sha256": "5f872aae563b9bde862168b9bd3b71b8e1ea335d7acf8079f61694b0ff6cb47e"
+    },
+    {
+      "file": "46.png",
+      "tool": "Baran Lab",
+      "kind": "favicon",
+      "source": "https://baranlab.org/wp-content/uploads/2020/09/favicon.ico",
+      "declaredAt": "https://baranlab.org/",
+      "note": "官网声明的 ICO 图标，真实转换为 32×32 PNG，页面仍以 16px 显示。",
+      "sha256": "0a441bc1e3ff2318448dc3711d70fbf28478424fbc10eaeb53012df3c364eae2"
+    },
+    {
+      "file": "47.png",
+      "tool": "Hartwig Group",
+      "kind": "favicon",
+      "source": "https://hartwig.cchem.berkeley.edu/static/img/shared/icon.gif",
+      "declaredAt": "https://hartwig.cchem.berkeley.edu/",
+      "note": "官网声明的 GIF 图标，真实转换为 32×32 PNG，页面仍以 16px 显示。",
+      "sha256": "918b46c67a1981b2959721b561d6d0c2145509ecc3403d95873a857b5cb8dfae"
+    },
+    {
+      "file": "48.png",
+      "tool": "Houk Group",
+      "kind": "provider-favicon",
+      "source": "https://www.chem.ucla.edu/favicon.ico",
+      "note": "课题组未声明独立图标；采用 UCLA 化学系主机根路径提供的分子图标，不标作独立课题组设计。32px PNG，页面显示 16px。",
+      "sha256": "c1d494464d743a866b28ba683926fd2dbe6d9eda734f93e523e915b2829b49cb"
+    },
+    {
+      "file": "49.png",
+      "tool": "Yaghi Group",
+      "kind": "provider-logo",
+      "source": "https://yaghi.berkeley.edu/img/header-cal.gif",
+      "note": "采用课题组主页展示的 Berkeley 标识，等比例缩小并补透明画布；不是课题组原生 favicon。32px PNG，页面显示 16px。",
+      "sha256": "234b98afc834976147d181f2231c7630cbf05d65788a51b0008fd547d5dc2a6c"
+    },
+    {
+      "file": "50.png",
+      "tool": "Arnold Group",
+      "kind": "favicon",
+      "source": "http://fhalab.caltech.edu/wp-content/uploads/2017/07/cropped-620px-Heme_b.svg_-32x32.png",
+      "declaredAt": "http://fhalab.caltech.edu/",
+      "note": "官网声明的 PNG 图标，真实解码为 32×32 PNG，页面仍以 16px 显示。",
+      "sha256": "92d3c911389c569ed568dad6ffb84c7e66e5dce531c3edf8b047df7a8cbebeda"
+    },
+    {
+      "file": "51.png",
+      "tool": "游书力课题组",
+      "kind": "provider-cached-favicon",
+      "source": "https://www.google.com/s2/favicons?domain=sioc.cas.cn&sz=64",
+      "note": "未取得独立 favicon；采用 Google 缓存的所属院所品牌图标，已目视核对并本地化，运行时不请求 Google。32px PNG，页面显示 16px。",
+      "sha256": "5000bfaeae9a07a3906627d58558d49b519c7e1f97855f84354ae39952cafb63"
+    },
+    {
+      "file": "52.png",
+      "tool": "冯小明课题组 · ASL",
+      "kind": "provider-cached-favicon",
+      "source": "https://www.google.com/s2/favicons?domain=www.scu.edu.cn&sz=64",
+      "note": "未取得独立 favicon；采用 Google 缓存的四川大学校徽，已目视核对并本地化，运行时不请求 Google。32px PNG，页面显示 16px。",
+      "sha256": "8c578a8ff9ae9fea7d6b97a8492d067b3614507bfffb26ca3e9eddd433ea35ec"
+    },
+    {
+      "file": "53.png",
+      "tool": "杨震课题组",
+      "kind": "provider-favicon",
+      "source": "https://www.pku.edu.cn/favicon.ico",
+      "note": "课题组未提供有效 favicon；采用北京大学官网校徽 ICO，最近邻转换为 32px PNG，页面显示 16px。",
+      "sha256": "05862f6aa022b981bc90caf23a1865a53cad8b1fd7b01d1fd3e1c7a15aa5f8d2"
+    },
+    {
+      "file": "54.png",
+      "tool": "雷晓光课题组",
+      "kind": "provider-favicon",
+      "source": "https://www.pku.edu.cn/favicon.ico",
+      "note": "课题组声明的 favicon 地址为空；采用北京大学官网校徽 ICO，最近邻转换为 32px PNG，页面显示 16px。",
+      "sha256": "05862f6aa022b981bc90caf23a1865a53cad8b1fd7b01d1fd3e1c7a15aa5f8d2"
+    },
+    {
+      "file": "55.png",
+      "tool": "唐勇课题组",
+      "kind": "provider-cached-favicon",
+      "source": "https://www.google.com/s2/favicons?domain=sioc.cas.cn&sz=64",
+      "note": "未取得独立 favicon；采用 Google 缓存的所属院所品牌图标，已目视核对并本地化，运行时不请求 Google。32px PNG，页面显示 16px。",
+      "sha256": "5000bfaeae9a07a3906627d58558d49b519c7e1f97855f84354ae39952cafb63"
+    },
+    {
+      "file": "56.png",
+      "tool": "龚流柱课题组",
+      "kind": "provider-cached-favicon",
+      "source": "https://www.google.com/s2/favicons?domain=www.ustc.edu.cn&sz=64",
+      "note": "采用 Google 缓存的 USTC 图标，已目视核对；原图 16px，最近邻放大为 PNG，运行时不请求 Google，页面显示 16px。",
+      "sha256": "cfd0f20dc8025641e0ff2c4006b569f2fbea9ee791cef29f7557c9e6900e394a"
+    },
+    {
+      "file": "57.png",
+      "tool": "裴坚–王婕妤课题组",
+      "kind": "provider-favicon",
+      "source": "https://www.pku.edu.cn/favicon.ico",
+      "note": "课题组声明的 favicon 地址为空；采用北京大学官网校徽 ICO，最近邻转换为 32px PNG，页面显示 16px。",
+      "sha256": "05862f6aa022b981bc90caf23a1865a53cad8b1fd7b01d1fd3e1c7a15aa5f8d2"
+    },
+    {
+      "file": "58.png",
+      "tool": "井上将行 Inoue",
+      "kind": "provider-cached-favicon",
+      "source": "https://www.google.com/s2/favicons?domain=www.u-tokyo.ac.jp&sz=64",
+      "note": "未取得独立 favicon；采用 Google 缓存的东京大学蓝黄银杏叶图标，已目视核对并本地化，运行时不请求 Google。32px PNG，页面显示 16px。",
+      "sha256": "142e91db4dbfa804d81893c559218441e66a7f1a08307be245d4aac60c900e4c"
+    },
+    {
+      "file": "59.png",
+      "tool": "伊丹健一郎 Itami",
+      "kind": "favicon",
+      "source": "https://itami-lab.com/wp-content/uploads/2025/04/cropped-logo_image_0-32x32.png",
+      "declaredAt": "https://itami-lab.com/?lang=en",
+      "note": "官网声明的 PNG 图标，真实解码为 32×32 PNG，页面仍以 16px 显示。",
+      "sha256": "ccfb4049bac0ef82ea077261fae2f3d971b6e8549020e713bee4239fe67129d8"
+    },
+    {
+      "file": "60.png",
+      "tool": "伊藤肇 Ito",
+      "kind": "favicon",
+      "source": "https://itogrouphp.eng.hokudai.ac.jp/wp-content/themes/original/assets/img/favicons/favicon.ico",
+      "declaredAt": "https://itogrouphp.eng.hokudai.ac.jp/en.html",
+      "note": "官网声明的 ICO 图标，真实转换为 32×32 PNG，页面仍以 16px 显示。",
+      "sha256": "bd9f725ca8bcdb5b0714c8dff9242747bb9f9f6818e3328e5afa0bbea324d199"
+    },
+    {
+      "file": "61.png",
+      "tool": "前田理 Maeda · 理论化学",
+      "kind": "favicon",
+      "source": "https://afir.sci.hokudai.ac.jp/theochem/images/favicon.ico",
+      "declaredAt": "https://afir.sci.hokudai.ac.jp/theochem/en/",
+      "note": "官网声明的 ICO 图标，真实转换为 32×32 PNG，页面仍以 16px 显示。",
+      "sha256": "33e1afac776b5b3b8b654d9f4af67fc802f8ae76e63d2204fba15d4c2771c24e"
+    },
+    {
+      "file": "62.png",
+      "tool": "山口茂弘 Yamaguchi",
+      "kind": "favicon",
+      "source": "http://orgreact.chem.nagoya-u.ac.jp/en/images/favicon.png",
+      "declaredAt": "http://orgreact.chem.nagoya-u.ac.jp/en/index.html",
+      "note": "官网声明的 PNG 图标，真实解码为 32×32 PNG，页面仍以 16px 显示。",
+      "sha256": "ff249cd5c8fd7d77cc25db4340d719820fcb0f3ab62197d86de2ada6ec4eedb3"
+    },
+    {
+      "file": "63.png",
+      "tool": "横岛聪 Yokoshima",
+      "kind": "provider-favicon",
+      "source": "https://www.nagoya-u.ac.jp/favicon.ico",
+      "note": "课题组未声明独立 favicon；采用名古屋大学官网 ICO 图标。32px PNG，页面显示 16px。",
+      "sha256": "8adc21ada9bad02839379ac1f652ead752b5f8a1d02774cd8f2af3a9fc6b84eb"
+    },
+    {
+      "file": "64.png",
+      "tool": "福山–横岛机理习题",
+      "kind": "provider-favicon",
+      "source": "https://www.nagoya-u.ac.jp/favicon.ico",
+      "note": "题库未声明独立 favicon；采用名古屋大学官网 ICO 图标。32px PNG，页面显示 16px。",
+      "sha256": "8adc21ada9bad02839379ac1f652ead752b5f8a1d02774cd8f2af3a9fc6b84eb"
+    },
+    {
+      "file": "65.png",
+      "tool": "Sci-Hub",
+      "kind": "favicon",
+      "source": "https://sci-hub.shop/icon.png",
+      "declaredAt": "https://sci-hub.shop/",
+      "note": "当前导航目标页声明的乌鸦 PNG favicon，原图 151×294，等比例缩小并补为 32×32 透明画布；替换此前来自 .ru 的红星图标。页面仍以 16px 显示。记录目标页提供的图标来源，不据此认定该镜像导航域名属于 Sci-Hub 官方。",
+      "sha256": "d1d6f842249bf650a681deed847c516f9d238a2ab642eefdb97feb3b7c1ea7d8"
+    },
+    {
+      "file": "66.png",
+      "tool": "小木虫",
+      "kind": "favicon",
+      "source": "https://muchongimg.xmcimg.com/data/emuch_bbs_images/favicon.ico",
+      "declaredAt": "https://muchong.com/bbs/",
+      "note": "论坛页面声明的 16px ICO，真实解码为 32×32 PNG；页面仍显示 16px。",
+      "sha256": "e69deab7f156cadb56026df159c89432eb1095268a184ee27ea71a9e28fc87fd"
+    },
+    {
+      "file": "67.png",
+      "tool": "化学空间 Chem-Station",
+      "kind": "site-logo",
+      "source": "https://assets.cn.chem-station.com/uploads/tcd-w/logo.png?1788874295",
+      "declaredAt": "https://cn.chem-station.com/",
+      "note": "采用中文首页展示的站点 Logo，裁取左侧红色独立图形（400×75 原图中的 0,0,83,75 区域），等比缩小并补为 32×32 PNG；不是原生 favicon。根 favicon.ico 跳转到 WordPress 默认图标，未采用。页面仍显示 16px。",
+      "sha256": "9a4a00f60a710a7bc2669d9b055eaed8b42e97d11ef0364ea63be8831d4635ee"
+    },
+    {
+      "file": "68.png",
+      "tool": "Chemistry Stack Exchange",
+      "kind": "favicon",
+      "source": "https://chemistry.stackexchange.com/Content/Sites/chemistry/Img/favicon.ico?v=58f8dbddd877",
+      "declaredAt": "https://chemistry.stackexchange.com/",
+      "note": "站点首页声明的 32px ICO，真实转换为 32×32 PNG；页面仍显示 16px。",
+      "sha256": "fe25e0503d7e27edb89f3e6f2126c1f314322417553fde6395f0e897da2a8d18"
+    },
+    {
+      "file": "69.png",
+      "tool": "ChemistryViews",
+      "kind": "cached-favicon",
+      "source": "https://www.google.com/s2/favicons?domain=www.chemistryviews.org&sz=64",
+      "note": "官网本轮直接请求和普通 Chrome 访问均遇到 403／人机验证，未绕过。使用已目视核对的站点缓存图标，64px PNG 缩为 32px；运行时仅加载本地文件，页面显示 16px，不请求 Google。",
+      "sha256": "86fc0b1a7cd3d8cf2df7284d454313a68860085f559010cb7248de94f2e3d2fd"
+    },
+    {
+      "file": "70.png",
+      "tool": "Chemistry World",
+      "kind": "favicon",
+      "source": "https://www.chemistryworld.com/magazine/dest/graphics/favicons/favicon-32x32.png",
+      "declaredAt": "https://www.chemistryworld.com/",
+      "note": "首页声明的 32px PNG favicon，保留图形并统一为本地 PNG；页面仍显示 16px。",
+      "sha256": "c73b238b724193f931054bb0a565c8e8ab9c33a78f8f0025c43b9106f046de42"
+    },
+    {
+      "file": "71.png",
+      "tool": "摩熵化学 MolAid",
+      "kind": "favicon",
+      "source": "https://chem.molaid.com/imgs/favicon.ico",
+      "declaredAt": "https://chem.molaid.com/home",
+      "note": "首页声明的 favicon；地址后缀和响应类型为 ICO，实际内容为 16×16 PNG。真实解码并以 Lanczos 重采样为 32×32 PNG，保留蓝底白色品牌图形；页面仍显示 16px，仅从本地加载。本次仅核验新增入口及图标，不表示旧来源重新联网核验。",
+      "sha256": "40416fe0c37d7efb63eb82372735515f2ae2c952a4712dab7ac49443b9101ad2"
+    },
+    {
+      "file": "72.png",
+      "tool": "Chemistry Reference Resolver",
+      "kind": "favicon",
+      "source": "https://chemsearch.kovsky.net/favicon.ico",
+      "declaredAt": "https://chemsearch.kovsky.net/",
+      "note": "首页声明的 16×16 ICO favicon，经 Chrome 默认 TLS 验证取得 HTTP 200；真实解码并以 Lanczos 重采样为 32×32 PNG，页面仍显示 16px。首次 Python 请求曾遇 TLS 握手超时，未关闭证书验证；本次未重新核验旧图标上游。",
+      "sha256": "3638b52871be5cbb89769ee8a887ad89a303f645fb8e958adb0cb6ba68bbc534"
+    }
+  ],
+  "pendingIcons": [
+    {
+      "index": 73,
+      "tool": "MDPI",
+      "homepage": "https://www.mdpi.com/",
+      "fallback": "MD",
+      "attemptedAt": "2026-09-14T04:16:19.110742+00:00",
+      "reason": "官网与 Google 图标缓存请求均被抓取工具以 Blocked internal address 拒绝，域名解析落在代理 fake-IP 网段。未取得图标，显式使用文字缩写；不绕过安全检查，不声明首页或图标已验证可访问。"
+    },
+    {
+      "index": 74,
+      "tool": "Thieme Connect",
+      "homepage": "https://www.thieme-connect.com/products",
+      "fallback": "Th",
+      "attemptedAt": "2026-09-14T04:16:19.110742+00:00",
+      "reason": "官网与 Google 图标缓存请求均被抓取工具以 Blocked internal address 拒绝，域名解析落在代理 fake-IP 网段。未取得图标，显式使用文字缩写；不绕过安全检查，不声明首页或图标已验证可访问。"
+    },
+    {
+      "index": 75,
+      "tool": "Taylor & Francis Online",
+      "homepage": "https://www.tandfonline.com/",
+      "fallback": "TF",
+      "attemptedAt": "2026-09-14T04:16:19.110742+00:00",
+      "reason": "官网与 Google 图标缓存请求均被抓取工具以 Blocked internal address 拒绝，域名解析落在代理 fake-IP 网段。未取得图标，显式使用文字缩写；不绕过安全检查，不声明首页或图标已验证可访问。"
+    }
+  ],
+  "formatOnlyConversions": [
+    "11.png",
+    "15.png",
+    "17.png",
+    "18.png",
+    "20.png",
+    "21.png",
+    "25.png",
+    "8.png"
+  ]
+}
