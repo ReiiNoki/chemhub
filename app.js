@@ -66,7 +66,7 @@ function card(tool){
     <span class="tool-desc">${desc}</span>
     <span class="tool-tags"><span class="tool-tag"><svg><use href="#i-web"/></svg>网页端</span></span>
     <span class="card-foot"><span class="category">${cat}</span><span class="visit">访问官网</span></span>
-  </a>${pinButton(tool)}</article>`;
+  </a>${pinButton(tool)}<a class="tool-detail" href="tools/${escapeHtml(tool.slug)}/" aria-label="查看 ${name} 详情">详情</a></article>`;
 }
 function pinnedCard(tool){
   const name=escapeHtml(tool.n);
