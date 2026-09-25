@@ -32,6 +32,8 @@ dist/
 ├── design.css
 ├── app.js
 ├── tools.js
+├── privacy.html
+├── ads.txt
 ├── robots.txt
 ├── sitemap.xml
 ├── assets/icons/*.png
@@ -39,9 +41,9 @@ dist/
 └── category/<slug>/index.html
 ```
 
-当前为 76 个资源、12 个分类、73 个本地图标，共输出 167 个文件。MDPI、Thieme Connect、Taylor & Francis Online 暂用文字标识；补齐真实图标后，保持索引 73～75，更新来源记录并移除各条目的 `icon:false`。未指定 `icon` 或设为 `true` 均要求对应 PNG，其他类型的值会阻止构建；显式文字模式下，即使有遗留 PNG 也不会发布。
+当前为 76 个资源、12 个分类、73 个本地图标，共输出 169 个文件。MDPI、Thieme Connect、Taylor & Francis Online 暂用文字标识；补齐真实图标后，保持索引 73～75，更新来源记录并移除各条目的 `icon:false`。未指定 `icon` 或设为 `true` 均要求对应 PNG，其他类型的值会阻止构建；显式文字模式下，即使有遗留 PNG 也不会发布。
 
-请修改根目录源码，而不是 `dist/` 中的副本。脚本不会发布 `docs/`、测试或来源记录；生成目录不纳入 Git。以后新增隐私政策、`ads.txt` 或其他正式文件时，需要同步更新脚本中的发布白名单。
+请修改根目录源码，而不是 `dist/` 中的副本。脚本不会发布 `docs/`、测试或来源记录；生成目录不纳入 Git。隐私政策在根目录 `privacy.html`，`ads.txt` 的发布商 ID 应与首页 AdSense 脚本保持一致；更新账号时需要同时修改两处。新增其他正式文件时，需要同步更新脚本中的发布白名单。
 
 ## Cloudflare Pages：连接 GitHub
 

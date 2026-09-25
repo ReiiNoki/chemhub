@@ -10,7 +10,7 @@ const catalogSource = fs.readFileSync(path.join(root, 'tools.js'), 'utf8');
 const data = JSON.parse(vm.runInNewContext(`${catalogSource}\nJSON.stringify({tools, toolCategories, toolCategorySlugs});`, {}, { timeout: 1000 }));
 const { tools: catalog, toolCategories, toolCategorySlugs } = data;
 const iconFiles = catalog.flatMap((tool, index) => tool.icon === false ? [] : [`assets/icons/${index}.png`]);
-const copiedFiles = ['design.css', 'app.js', 'tools.js', ...iconFiles];
+const copiedFiles = ['design.css', 'app.js', 'tools.js', 'privacy.html', 'ads.txt', ...iconFiles];
 const generatedFiles = [
   'index.html', 'robots.txt', 'sitemap.xml',
   ...catalog.map(tool => `tools/${tool.slug}/index.html`),
@@ -51,6 +51,7 @@ function escapeHtml(value) { return String(value).replace(/[&<>"']/g, char => ({
 function assertSeoOutput() {
   const home = fs.readFileSync(path.join(output, 'index.html'), 'utf8');
   assert.match(home, /<link rel="canonical" href="https:\/\/chemhub\.dpdns\.org\/">/);
+  assert.match(home, /<a href="privacy\.html">隐私政策<\/a>/, 'Homepage links to the privacy policy');
   assert.ok(catalog.every(tool => home.includes(`>${escapeHtml(tool.n)}</a>`)), 'Homepage HTML contains every tool name without executing JavaScript');
   assert.ok(toolCategories.every(category => home.includes(`>${category}</a>`)), 'Homepage HTML contains every category heading');
   assert.ok(catalog.every(tool => home.includes(`/tools/${tool.slug}/`)), 'Homepage links to every internal tool page');
@@ -61,11 +62,20 @@ function assertSeoOutput() {
   assert.match(robots, /^User-agent: \*\nAllow: \/\n/m);
   assert.match(robots, /Sitemap: https:\/\/chemhub\.dpdns\.org\/sitemap\.xml/);
   const sitemap = fs.readFileSync(path.join(output, 'sitemap.xml'), 'utf8');
-  const urls = [`${siteUrl}/`, ...catalog.map(tool => `${siteUrl}/tools/${tool.slug}/`), ...toolCategories.map(category => `${siteUrl}/category/${toolCategorySlugs[category]}/`)];
+  const urls = [`${siteUrl}/`, `${siteUrl}/privacy.html`, ...catalog.map(tool => `${siteUrl}/tools/${tool.slug}/`), ...toolCategories.map(category => `${siteUrl}/category/${toolCategorySlugs[category]}/`)];
   assert.ok(sitemap.startsWith('<?xml version="1.0" encoding="UTF-8"?>'));
   assert.ok(urls.every(url => sitemap.includes(`<loc>${url}</loc>`)), 'Sitemap includes home, every tool page and every category page');
   assert.equal((sitemap.match(/<url>/g) || []).length, urls.length, 'Sitemap has no missing or extra URLs');
   assert.doesNotMatch(sitemap, /<lastmod>/, 'No fabricated lastmod values');
+
+  const privacy = fs.readFileSync(path.join(output, 'privacy.html'), 'utf8');
+  assert.match(privacy, /<link rel="canonical" href="https:\/\/chemhub\.dpdns\.org\/privacy\.html">/);
+  assert.match(privacy, /<h1>隐私政策<\/h1>/);
+  assert.match(privacy, /chemhub\.pinned-tools\.v1/);
+  assert.match(privacy, /Google AdSense/);
+  const publisher = home.match(/adsbygoogle\.js\?client=ca-(pub-\d+)/)?.[1];
+  assert.ok(publisher, 'Homepage declares an AdSense publisher ID');
+  assert.equal(fs.readFileSync(path.join(output, 'ads.txt'), 'utf8'), `google.com, ${publisher}, DIRECT, f08c47fec0942fa0\n`, 'ads.txt matches the AdSense ID configured on the homepage');
 
   for (const tool of catalog) {
     const file = path.join(output, 'tools', tool.slug, 'index.html');
@@ -75,6 +85,7 @@ function assertSeoOutput() {
     assert.ok(html.includes(`<link rel="canonical" href="${siteUrl}/tools/${tool.slug}/">`), `${tool.slug} canonical`);
     assert.ok(html.includes(`<h1>${escapeHtml(tool.n)}</h1>`), `${tool.slug} h1`);
     assert.ok(html.includes('target="_blank" rel="noopener noreferrer"'), `${tool.slug} safe official link`);
+    assert.ok(html.includes('href="/privacy.html"'), `${tool.slug} links to privacy`);
   }
   for (const category of toolCategories) {
     const slug = toolCategorySlugs[category];
@@ -83,6 +94,7 @@ function assertSeoOutput() {
     const html = fs.readFileSync(file, 'utf8');
     assert.ok(html.includes(`<link rel="canonical" href="${siteUrl}/category/${slug}/">`), `${slug} canonical`);
     assert.ok(html.includes(`<h1>${category}</h1>`), `${slug} h1`);
+    assert.ok(html.includes('href="/privacy.html"'), `${slug} links to privacy`);
     for (const tool of catalog.filter(tool => tool.c === category)) assert.ok(html.includes(`/tools/${tool.slug}/`), `${slug} links ${tool.slug}`);
   }
 }

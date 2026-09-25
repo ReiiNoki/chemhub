@@ -93,7 +93,7 @@ function pageShell({ title, description, canonical, body, jsonLd }) {
 </head>
 <body class="seo-page">
   <header class="seo-header"><a class="seo-brand" href="/">ChemHub</a></header>
-  <main class="seo-main">${body}</main>
+  <main class="seo-main">${body}<p class="seo-back"><a href="/privacy.html">隐私政策</a></p></main>
 </body>
 </html>`;
 }
@@ -133,7 +133,7 @@ const gridMarker = '<div id="toolGrid" class="tool-grid" tabindex="-1"></div>';
 if (!sourceIndex.includes(gridMarker)) throw new Error('index.html toolGrid marker not found');
 const generatedIndex = sourceIndex.replace(gridMarker, `<div id="toolGrid" class="tool-grid" tabindex="-1">${homepageCatalog()}</div>`);
 const iconFiles = tools.flatMap((tool, index) => tool.icon === false ? [] : [`assets/icons/${index}.png`]);
-const copiedFiles = ['design.css', 'app.js', 'tools.js', ...iconFiles];
+const copiedFiles = ['design.css', 'app.js', 'tools.js', 'privacy.html', 'ads.txt', ...iconFiles];
 const pngSignature = Buffer.from('89504e470d0a1a0a', 'hex');
 const outputs = [{ file: 'index.html', data: Buffer.from(generatedIndex) }];
 for (const file of copiedFiles) {
@@ -144,7 +144,7 @@ for (const file of copiedFiles) {
 outputs.push({ file: 'robots.txt', data: Buffer.from(`User-agent: *\nAllow: /\n\nSitemap: ${siteUrl}/sitemap.xml\n`) });
 for (const tool of tools) outputs.push({ file: `tools/${tool.slug}/index.html`, data: Buffer.from(toolPage(tool)) });
 for (const category of toolCategories) outputs.push({ file: `category/${toolCategorySlugs[category]}/index.html`, data: Buffer.from(categoryPage(category)) });
-const sitemapUrls = [`${siteUrl}/`, ...tools.map(tool => `${siteUrl}/tools/${tool.slug}/`), ...toolCategories.map(category => `${siteUrl}/category/${toolCategorySlugs[category]}/`)];
+const sitemapUrls = [`${siteUrl}/`, `${siteUrl}/privacy.html`, ...tools.map(tool => `${siteUrl}/tools/${tool.slug}/`), ...toolCategories.map(category => `${siteUrl}/category/${toolCategorySlugs[category]}/`)];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.map(url => `  <url><loc>${escapeXml(url)}</loc></url>`).join('\n')}\n</urlset>\n`;
 outputs.push({ file: 'sitemap.xml', data: Buffer.from(sitemap) });
 
