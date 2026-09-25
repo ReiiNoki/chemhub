@@ -24,7 +24,7 @@
 node scripts/build.cjs
 ```
 
-脚本会重建 `dist/`，只复制四个正式文件和资源实际使用的 PNG；仅 `icon:false` 的文字标识条目跳过图片，其余条目缺图或图片格式错误仍会阻止构建：
+脚本会重建 `dist/`，预渲染首页工具目录，并生成工具详情页、分类页、站点地图和 robots.txt。只复制运行所需的正式文件及资源实际使用的 PNG；仅 `icon:false` 的文字标识条目跳过图片，其余条目缺图或图片格式错误仍会阻止构建：
 
 ```text
 dist/
@@ -32,10 +32,14 @@ dist/
 ├── design.css
 ├── app.js
 ├── tools.js
-└── assets/icons/*.png
+├── robots.txt
+├── sitemap.xml
+├── assets/icons/*.png
+├── tools/<slug>/index.html
+└── category/<slug>/index.html
 ```
 
-当前为 76 个资源、73 个本地图标，共输出 77 个文件。MDPI、Thieme Connect、Taylor & Francis Online 暂用文字标识；补齐真实图标后，保持索引 73～75，更新来源记录并移除各条目的 `icon:false`。未指定 `icon` 或设为 `true` 均要求对应 PNG，其他类型的值会阻止构建；显式文字模式下，即使有遗留 PNG 也不会发布。
+当前为 76 个资源、12 个分类、73 个本地图标，共输出 167 个文件。MDPI、Thieme Connect、Taylor & Francis Online 暂用文字标识；补齐真实图标后，保持索引 73～75，更新来源记录并移除各条目的 `icon:false`。未指定 `icon` 或设为 `true` 均要求对应 PNG，其他类型的值会阻止构建；显式文字模式下，即使有遗留 PNG 也不会发布。
 
 请修改根目录源码，而不是 `dist/` 中的副本。脚本不会发布 `docs/`、测试或来源记录；生成目录不纳入 Git。以后新增隐私政策、`ads.txt` 或其他正式文件时，需要同步更新脚本中的发布白名单。
 
@@ -52,7 +56,9 @@ dist/
 | 根目录 | 留空，使用仓库根目录 |
 | 环境变量 | 当前无需配置 |
 
-以后推送到 `main`，Pages 会重新构建并部署。不需要 GitHub Pages，也不要把整个仓库根目录作为网站发布目录。平台配置仍需在 Cloudflare 后台完成；这些文件不会自动创建 GitHub 仓库或部署网站。
+以后推送到 `main`，Pages 会重新构建并部署。**务必在实际承载域名的 Cloudflare 项目中将构建输出目录设为 `dist`（不是仓库根目录 `.`）**。否则会出现首页加载源码 `index.html`、工具详情页只在 `/dist/tools/…/` 可访问而 `/tools/…/` 返回 404，并且将 `docs/`、`tests/`、来源记录等非公开文件暴露在网站根目录。构建命令也必须是 `node scripts/build.cjs`。如果实际使用的是 Workers 静态资源部署（而非 Pages），则需将其静态资源目录设置为 `./dist`。平台配置仍需在承载域名的 Cloudflare 项目中完成；这些文件不会自动修改线上项目配置或部署网站。
+
+部署后执行 `node tests/deployment.cjs` 检查真实站点；在该检查通过之前，不要提交 sitemap。
 
 参考：[Pages Git 集成](https://developers.cloudflare.com/pages/get-started/git-integration/)。
 
@@ -64,6 +70,9 @@ node tests/build.cjs
 
 # 使用已安装的 Playwright 和 Chrome；也可通过 PLAYWRIGHT_MODULE 指定模块目录。
 node tests/designs.cjs
+
+# 部署后检查线上首页、详情页、分类页、robots、sitemap 和白名单。
+node tests/deployment.cjs
 ```
 
 构建测试使用临时目录，不改动网站源码或本地 `dist/`。浏览器测试只覆盖正式首页，不生成截图。详细交互、宽屏留白和测试说明见 [`docs/MAINTENANCE.md`](docs/MAINTENANCE.md)。
